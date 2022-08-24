@@ -30,6 +30,8 @@ class Post extends Model
         'body',
         'status',
         'image_path',
+        'crested_at',
+        'updated_at',
     ];
 
     //get comment for the post

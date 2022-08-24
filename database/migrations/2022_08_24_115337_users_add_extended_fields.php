@@ -16,7 +16,7 @@ class UsersAddExtendedFields extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('nickname');
             $table->string('website')->nullable();
-            $table->char('phone', 20)->unique();
+            $table->char('phone', 30)->unique();
         });
     }
 

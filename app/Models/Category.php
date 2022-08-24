@@ -31,6 +31,8 @@ class Category extends Model
     protected $fillable = [
         'name',
         'slug',
+        'crested_at',
+        'updated_at',
     ];
 
     //get posts for the category

@@ -25,8 +25,7 @@ class Comment extends Model
         'post_id',
         'user_email',
         'comment',
-        'crested_at',
-        'updated_at',
+
     ];
 
     ////get post that owns the comment

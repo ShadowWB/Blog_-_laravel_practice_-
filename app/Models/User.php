@@ -24,8 +24,6 @@ class User extends Authenticatable
         'website',
         'password',
         'email_verified_at',
-        'crested_at',
-        'updated_at',
     ];
 
 

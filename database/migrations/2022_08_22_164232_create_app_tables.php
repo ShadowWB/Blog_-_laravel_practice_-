@@ -26,7 +26,7 @@ class CreateAppTables extends Migration
             $table->foreignId('category_id');
             $table->string('subject',255);
             $table->text('body');
-            $table->enum('status',config('blog.statuses'))->default('draft');
+            $table->enum('status',config('blog.statuses.options'))->default(config('blog.statuses.default'));
             $table->string('image_path',255)->nullable();
             $table->timestamps();
 

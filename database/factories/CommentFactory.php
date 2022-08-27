@@ -17,7 +17,7 @@ class CommentFactory extends Factory
     {
         return [
             'post_id'=> fn() => Post::factory()->create()->id,
-            'user_email'=> fn() => User::factory()->create()->email,
+            'user_email'=>$this->faker->email,
             'comment'=>$this->faker->realText(200, 2),
         ];
     }

@@ -30,12 +30,11 @@ class Post extends Model
         'body',
         'status',
         'image_path',
-        'crested_at',
-        'updated_at',
+
     ];
 
     //get comment for the post
-    public function  comments()
+    public function comments()
     {
         return $this->hasMany(
             Comment::class,
@@ -57,7 +56,7 @@ class Post extends Model
     //get category of the post
     public function category()
     {
-        $this->belongsTo(
+        return $this->belongsTo(
             Category::class,
             'category_id',
             'id',

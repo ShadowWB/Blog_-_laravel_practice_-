@@ -15,7 +15,7 @@ class PostFactory extends Factory
      */
     public function definition()
     {
-        $statuses = config('blog.statuses');
+        $statuses = config('blog.statuses.options');
 
         return [
             'user_id' => fn() => User::factory()->create()->id,

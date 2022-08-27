@@ -13,11 +13,12 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        $name=$this->faker->words(3,true);
+        $name=config('blog.categories');
+        $someName=$name[\array_rand($name)];
         return [
-            'name'=>$name,
+            'name'=>$someName,
             'slug'=> \strtolower(
-                \str_replace(' ','-',$name)
+                \str_replace(' ','-',$someName)
             ),
         ];
     }

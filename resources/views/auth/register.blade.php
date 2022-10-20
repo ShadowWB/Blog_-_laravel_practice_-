@@ -4,8 +4,13 @@
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
+            <p>
+                <a href="{{route('posts.index')}}"> Main page</a>
+            </p>
+            <p>
+                <a href="{{route('admin.posts.index')}}"> My posts</a>
+            </p>
         </x-slot>
-
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 

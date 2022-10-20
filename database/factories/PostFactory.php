@@ -16,14 +16,15 @@ class PostFactory extends Factory
     public function definition()
     {
         $statuses = config('blog.statuses.options');
+        $images = config('blog.images');
 
         return [
             'user_id' => fn() => User::factory()->create()->id,
             'category_id' => fn() => Category::factory()->create()->id,
-            'subject'=>$this->faker->sentence(),
-            'body'=>$this->faker->realText(500,true),
+            'subject'=>$this->faker->realText(30,true),
+            'body'=>$this->faker->realText(1000,true),
             'status'=>$statuses[\array_rand($statuses)],
-            'image_path'=>$this->faker->imageUrl(640,480,'animals',true)
+            'image_path'=>$images[\array_rand($images)]
         ];
     }
 }

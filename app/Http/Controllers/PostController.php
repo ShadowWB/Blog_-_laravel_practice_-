@@ -14,30 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index',[
-            'posts'=>Post::all()
+        return view('pages.posts.index',[
+            'posts'=>Post::latest()->inRandomOrder()->paginate(5)
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -48,8 +27,26 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('pages.posts.show',[
+            'post'=>$post
+        ]);
     }
+
+
+    public function archive( $month,$year)
+    {
+        $posts = Post::latest()
+            ->whereYear('created_at',$year)
+            ->whereMonth('created_at',$month)
+            ->paginate(5);
+        return view('pages.posts.archive',[
+            'posts'=>$posts
+        ]);
+
+    }
+
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -59,7 +56,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+
     }
 
     /**

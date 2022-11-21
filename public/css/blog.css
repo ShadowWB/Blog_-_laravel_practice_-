@@ -125,6 +125,12 @@ article>a{
     color: darkgreen;
     text-decoration: none;
 }
+div a{
+    text-decoration: none;
+}
+p a{
+    text-decoration: none;
+}
 .text-bg-dark{
     background-image:url("../img/blog.png");
     background-size: cover;
